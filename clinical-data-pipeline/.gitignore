@@ -1,0 +1,63 @@
+# =========================
+# 1. Security & Credentials (CRITICAL)
+# =========================
+# Never commit your GCP service account keys or environment variables
+terraform/credentials.json
+*.pem
+*.key
+.env
+dbt_omop/profiles.yml
+
+# =========================
+# 2. Python & Virtual Environments
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+
+# =========================
+# 3. Terraform State Files
+# =========================
+# Terraform state files can contain sensitive infrastructure data
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+*.tfvars
+*.tfvars.json
+
+# =========================
+# 4. Apache Airflow
+# =========================
+airflow/logs/
+airflow/airflow-webserver.pid
+airflow/airflow.db
+airflow/airflow.cfg
+airflow/.astro/
+
+# =========================
+# 5. dbt (Data Build Tool)
+# =========================
+dbt_omop/target/
+dbt_omop/dbt_packages/
+dbt_omop/logs/
+
+# =========================
+# 6. Data & Notebooks
+# =========================
+# Do not push raw patient data or massive CSVs to GitHub
+*.csv
+*.json
+*.parquet
+.ipynb_checkpoints
+
+# =========================
+# 7. OS & Editor Files
+# =========================
+.DS_Store
+.idea/
+.vscode/
